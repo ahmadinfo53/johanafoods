@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Poppins:wght@300&display=swap');
+
+:root {
+    --brown: #120906;
+    --white: #ffffff;
+    --yellow: #F6B633;
+    --primaryfont: 'Amatic SC', cursive;
+    --secondaryfont: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition-duration: 1s;
+    scroll-behavior: smooth;
+}
+
+.completeapp {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar {
+    padding-top: 20px;
+    position: inherit;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--secondaryfont);
+    margin-left: 150px;
+    display: inline;
+    font-size: 16px;
+    color: var(--brown)
+}
+
+
+.navbar > ul {
+    list-style: none;
+    font-family: var(--secondaryfont);
+    font-size: 14px;
+    float: right;
+    text-decoration: none;
+    margin-right: 400px;
+}
+
+.navbar>ul li {
+    display: inline;
+    margin-left: 65px;
+
+}
+
+.navbar > ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hero Section Styling */
+
+.herosection {
+    background-color: var(--yellow);
+    height: 800px;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.whiterectangle {
+    width: 400px;
+    height: 800px;
+    background-color: var(--white);
+   right: 0px;
+   top: 0px;
+   position: absolute;
+   z-index: 10;
+
+}
+
+.topcircle {
+    width: 300px;
+    height: 300px;
+    background-color: var(--yellow);
+    position: absolute;
+    top: -150px;
+    right: 250px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.bottomcircle {
+    width: 300px;
+    height: 300px;
+    background-color: var(--yellow);
+    position: absolute;
+    bottom: -150px;
+    right: 250px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.heroimg {
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-image: url('../src/assets/noodles.png');
+    position: absolute;
+    top:150px;
+    right: 150px;
+    z-index: 10;
+    border-radius: 50%;
+    }
+
+.leftside {
+    position: absolute;
+    top: 250px;
+    left: 150px;
+}
+
+.herotitle {
+    font-family: var(--primaryfont);
+    font-size: 100px;
+    font-weight: 100;
+}
+
+.herodesc {
+    padding-top: 10px;
+    width: 40%;
+    font-family: var(--secondaryfont);
+    font-size: 16px;
+    line-height: 18px;   
+}
+
+.lineundercontent {
+    width: 37%;
+    height: 2px;
+    margin-top: 10px;
+    background-color: var(--brown);
+}
+
+/* Menu section CSS */
+
+.menusection {
+    background-color: var(--brown);
+    position: relative;
+    height: fit-content;
+    z-index: 100;
+    padding-bottom: 30px;
+}
+.menusectionheading {
+    font-family: var(--primaryfont);
+    font-size: 100px;
+    text-align: center;
+    color: var(--white);
+    font-weight: 100;
+    padding-top: 50px;
+}
+
+.menuitem {
+    width: 250px;
+    height: 250px;
+    background-color: var(--yellow);
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 125px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menuitem:hover {
+    width: 800px;
+    height: 250px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+}
+
+.menuitemimg {
+    float: left;
+    width: 240px;
+    height: 240px;
+    border: 5px solid var(--yellow);
+    border-radius: 50%;
+    
+}
+
+ .menuitemtitle {
+    display: none;
+    opacity: 0;
+}
+
+.menuitemdescription {
+    display: none;
+    width: 150px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: var(--secondaryfont);
+    opacity: 0;
+}
+
+@keyframes showdesc {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes imgrotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-125deg);
+    }
+}
+
+.menuitem:hover .menuitemimg {
+    transition: width 1s;
+    animation: imgrotate 1s;
+    animation-delay: 0s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+}
+
+.menuitem:hover .menuitemtitle {
+    display: inline-block;
+    height: fit-content;
+    padding-top: 40px;
+    padding-left: 30px;
+    font-family:var(--primaryfont);
+    font-size: 30px;
+    animation: showdesc 1s;
+    animation-delay: .5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+}
+
+.menuitem:hover .menuitemdescription {
+    display: inline-block;
+    padding-left: 30px;
+    width: 500px;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    animation: showdesc 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+/* Restaurents section stylnig */
+
+.restaurentsection {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: var(--yellow);
+    font-family: var(--secondaryfont);
+}
+
+.restaurentsectitle {
+    text-align: center;
+    font-size: 100px;
+    font-family: var(--primaryfont);
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+
+.restaurentsbuttonssec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurentsbuttonssec button {
+    padding: 10px 30px;
+    margin:0px 20px;
+    border: solid 1px var(--brown);
+    border-radius: 5px;
+    background: transparent;
+    font-size: 16px;
+}
+
+.restaurentsbuttonssec button:hover {
+    background: var(--brown);
+    color: var(--white);
+}
+
+.restaurentsimages {
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+    margin-top: 30px;
+
+}
+.restaurentsdetailsection {
+    width: 400px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap: 20px 100px;
+    margin-left: calc(50% - 475px);
+    text-align: center;
+}
+
+.footersection {
+    background-color: var(--brown);
+    color: var(--white);
+    font-family: var(--secondaryfont);
+    height: 120px;
+}
+
+.footersection h2 {
+    display: block;
+    font-size: 16px;
+    padding-top: 46px;
+    text-align: center;
+}
+
+/* Media quaries for different screens */ 
+
+@media only screen and (max-width : 1350px) {
+    .herosection {  
+            height: 680px;
+    }
+
+    .herotitle {
+        font-size: 80px;
+    }
+
+    .heroimg {
+        width: 400px;
+        height: 400px;
+        background-size: 400px; 
+        top: 145px;
+    }
+
+    .whiterectangle {
+        width: 360px;
+        height: 680px;
+        background-color: var(--white);
+    }
+
+    .bottomcircle { 
+        bottom: -160px;
+        z-index: 100;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .menusectionheading {
+        font-size: 50px;
+        padding-top: 50px;
+    }
+
+    .herosection {
+        height: 800px;
+    }
+
+    .whiterectangle {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .topcircle {
+        width: 350px;
+        height: 250px;
+        top: -150px;
+        right: -100px;
+    }
+
+    .bottomcircle {
+        display: none;
+    }
+
+    .heroimg {
+        width: 300px;
+        height: 300px;
+        background-size: 300px;
+        right: calc(50vw - 150px);
+    }
+
+    .leftside {
+        top: 250px;
+        left: 0px;
+    }
+
+    .herotitle {
+        font-size: 50px;
+        margin-top: 250px;
+        text-align: center;
+    }
+    
+    .herodesc {
+        width: 80%;
+        margin-left: calc(10%);
+    }
+
+    .lineundercontent {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .logo {
+        margin-left: 20px;
+        font-size: 12px;
+    }
+
+    .navbar > ul {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .navbar > ul li {
+        display: inline;
+        margin-left: 0px;
+        margin-right: 20px;
+
+    }
+
+    .restaurentsdetailsection {
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        gap: 20px 100px;
+        margin-left: calc(50vw - 300px);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .menuitem {
+        width: 100px;
+        height: 100px;
+    }
+
+    .menuitem:hover {
+        width: 300px;
+        height: 110px;
+    }
+
+    .menuitemimg {
+        width: 100px;
+        height: 100px; 
+    }
+
+    .menuitem:hover .menuitemdescription {
+        display: none;
+    }
+
+    .restaurentsdetailsection {
+        width: 300px;
+        margin-top: 40px;
+        grid-template-columns: 1fr;
+        margin-left: calc(50vw - 150px);
+    }
+
+    .restaurentsectitle {
+        font-size: 50px;
+    }
+
+    .restaurentsbuttonssec button {
+        margin-bottom: 20px;
+    }
+
+}
